@@ -3,7 +3,10 @@ import { Github, Linkedin } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-center bg-[#0b101d] relative overflow-hidden px-4 text-white text-center">
+    <section
+      id="home"
+      className="min-h-screen flex flex-col justify-center items-center bg-[#0b101d] relative overflow-hidden px-4 text-white text-center"
+    >
       {/* Background constellation pattern can be added here later */}
 
       <div className="max-w-3xl">
@@ -18,7 +21,11 @@ const Hero = () => {
             aria-label="waving hand emoji"
             role="img"
             className="absolute bottom-0 right-0 -mb-2 -mr-2 text-3xl animate-wave"
-            style={{ animationTimingFunction: "linear", animationIterationCount: "infinite", animationDuration: "3s" }}
+            style={{
+              animationTimingFunction: 'linear',
+              animationIterationCount: 'infinite',
+              animationDuration: '3s',
+            }}
           >
             👋
           </span>
@@ -26,11 +33,18 @@ const Hero = () => {
 
         {/* Intro text with styles */}
         <h1 className="text-3xl sm:text-4xl font-semibold leading-snug max-w-[28rem] mx-auto">
-          Hello, I'm <strong>Ben</strong>. I'm a <strong>software engineer</strong> at{' '}
-          <a href="https://humanforce.com" target="_blank" rel="noopener noreferrer" className="underline font-semibold hover:text-green-400 transition-colors">
+          Hello, I'm <strong>Ben</strong>. I'm a <strong>software engineer</strong>{' '}
+          at{' '}
+          <a
+            href="https://humanforce.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-semibold hover:text-green-400 transition-colors"
+          >
             Humanforce
           </a>{' '}
-          in the platform team. I'm currently working with Laravel, React.js, Node.js, GraphQL, and AWS.
+          in the platform team. I'm currently working with Laravel, React.js, Node.js,
+          GraphQL, and AWS.
         </h1>
 
         {/* Buttons for GitHub and LinkedIn */}
@@ -82,4 +96,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
