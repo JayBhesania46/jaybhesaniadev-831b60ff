@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { Briefcase } from 'lucide-react';
 
 const experiences = [
   {
@@ -43,53 +43,52 @@ const experiences = [
 ];
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState(experiences[0].id);
-  
-  const activeExperience = experiences.find(exp => exp.id === activeTab);
-
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-20 bg-gray-50 dark:bg-transparent">
       <div className="container mx-auto px-6 lg:px-16">
-        <h2 className="section-heading">Where I've Worked</h2>
-        
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Tabs */}
-          <div className="flex md:block overflow-x-auto md:overflow-visible border-b md:border-b-0 md:border-l border-muted">
-            {experiences.map((exp) => (
-              <button
-                key={exp.id}
-                onClick={() => setActiveTab(exp.id)}
-                className={`px-5 py-3 font-mono text-sm whitespace-nowrap md:border-l-2 transition-colors duration-200 hover:bg-navy-light/50 hover:text-green ${
-                  activeTab === exp.id 
-                    ? 'text-green md:border-l-green bg-navy-light/30'
-                    : 'text-slate md:border-l-transparent'
-                }`}
-              >
-                {exp.company}
-              </button>
-            ))}
-          </div>
-          
-          {/* Tab content */}
-          <div className="md:col-span-3">
-            {activeExperience && (
-              <div>
-                <h3 className="text-xl text-slate-lightest mb-1">
-                  <span>{activeExperience.title}</span>
-                  <span className="text-green"> @ {activeExperience.company}</span>
-                </h3>
-                <p className="font-mono text-sm text-slate mb-4">{activeExperience.date}</p>
-                <p className="italic text-slate mb-4">{activeExperience.location}</p>
-                <ul className="space-y-3">
-                  {activeExperience.description.map((item, index) => (
-                    <li key={index} className="flex">
-                      <span className="text-green mr-2">▹</span>
-                      <span className="text-slate-light">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+        <h2 className="text-center text-3xl font-semibold mb-16 text-gray-900 dark:text-gray-100">My Experience</h2>
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical timeline line */}
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-1 bg-gray-300 h-full hidden md:block"></div>
+
+          <div className="space-y-12">
+            {experiences.map((exp, idx) => {
+              const isLeft = idx % 2 === 0;
+              return (
+                <div key={exp.id} className="relative flex flex-col md:flex-row items-center md:items-start">
+                  {/* Content box */}
+                  <div
+                    className={`w-full md:w-1/2 p-6 rounded-lg bg-white shadow-md dark:bg-gray-800 
+                    ${isLeft ? 'md:pr-10 md:text-right' : 'md:pl-10 md:text-left'}`}
+                    style={{ zIndex: 1 }}
+                  >
+                    <h3 className="font-semibold text-gray-800 dark:text-gray-200">
+                      {exp.title}
+                    </h3>
+                    <p className="font-semibold text-gray-600 dark:text-gray-400 mb-2">
+                      {exp.company}
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-300 italic mb-3">{exp.location}</p>
+                    <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-2 list-inside list-disc">
+                      {exp.description.map((desc, i) => (
+                        <li key={i}>{desc}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Center timeline icon and date */}
+                  <div className="absolute left-1/2 top-10 flex flex-col items-center -translate-x-1/2 md:static md:mx-6">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md dark:bg-gray-900 border border-gray-300 dark:border-gray-700">
+                      <Briefcase className="text-gray-700 dark:text-gray-400" size={20} />
+                    </div>
+                    <span className="mt-3 text-gray-500 dark:text-gray-400 text-sm whitespace-nowrap">{exp.date}</span>
+                  </div>
+
+                  {/* Empty flex item for spacing on the other side */}
+                  <div className="hidden md:block md:w-1/2"></div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
