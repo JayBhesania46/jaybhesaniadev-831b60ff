@@ -2,39 +2,28 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import About from "../components/About";
-import Experience from "../components/Experience";
-import Education from "../components/Education";
 import Projects from "../components/Projects";
-import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import SocialLinks from "../components/SocialLinks";
-import Loader from "../components/Loader";
 
 const Index = () => {
+  // We simplify the page showing only relevant sections matching the sample: header, hero, projects, footer
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
   return (
     <>
-      <Loader />
-      <div className="min-h-screen bg-navy text-slate-lighter" style={{ counterReset: "section" }}>
+      <div className="min-h-screen bg-[#0b101d] text-white">
         {mounted && (
           <>
             <Header />
-            <main>
+            <main className="pt-24">
               <Hero />
-              <About />
-              <Experience />
-              <Education />
               <Projects />
-              <Contact />
             </main>
             <Footer />
-            <SocialLinks />
           </>
         )}
       </div>
