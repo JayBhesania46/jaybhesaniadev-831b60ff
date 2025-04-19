@@ -1,13 +1,44 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect, useState } from "react";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Experience from "../components/Experience";
+import Education from "../components/Education";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+import SocialLinks from "../components/SocialLinks";
+import Loader from "../components/Loader";
 
 const Index = () => {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <>
+      <Loader />
+      <div className="min-h-screen bg-navy text-slate-lighter" style={{ counterReset: "section" }}>
+        {mounted && (
+          <>
+            <Header />
+            <main>
+              <Hero />
+              <About />
+              <Experience />
+              <Education />
+              <Projects />
+              <Contact />
+            </main>
+            <Footer />
+            <SocialLinks />
+          </>
+        )}
       </div>
-    </div>
+    </>
   );
 };
 
