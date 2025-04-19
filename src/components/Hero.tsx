@@ -1,5 +1,5 @@
 
-import { GitHub, Linkedin } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -41,7 +41,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-gray-900 font-semibold shadow-md transition hover:bg-gray-200"
           >
-            <GitHub size={20} />
+            <Github size={20} />
             GitHub
           </a>
           <a
@@ -57,26 +57,29 @@ const Hero = () => {
       </div>
 
       {/* Wave hand keyframes animation */}
-      <style jsx>{`
-        @keyframes wave {
-          0% { transform: rotate( 0.0deg) }
-          15% { transform: rotate(14.0deg) }
-          30% { transform: rotate(-8.0deg) }
-          40% { transform: rotate(14.0deg) }
-          50% { transform: rotate(-4.0deg) }
-          60% { transform: rotate(10.0deg) }
-          70% { transform: rotate( 0.0deg) }
-          100% { transform: rotate( 0.0deg) }
-        }
-        .animate-wave {
-          animation-name: wave;
-          animation-duration: 2.5s;
-          animation-iteration-count: infinite;
-          transform-origin: 70% 70%;
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes wave {
+            0% { transform: rotate( 0.0deg) }
+            15% { transform: rotate(14.0deg) }
+            30% { transform: rotate(-8.0deg) }
+            40% { transform: rotate(14.0deg) }
+            50% { transform: rotate(-4.0deg) }
+            60% { transform: rotate(10.0deg) }
+            70% { transform: rotate( 0.0deg) }
+            100% { transform: rotate( 0.0deg) }
+          }
+          .animate-wave {
+            animation-name: wave;
+            animation-duration: 2.5s;
+            animation-iteration-count: infinite;
+            transform-origin: 70% 70%;
+          }
+        `}
+      </style>
     </section>
   );
 };
 
 export default Hero;
+
