@@ -12,8 +12,12 @@ const ThemeToggle = () => {
       setTheme(savedTheme);
       if (savedTheme === "dark") {
         document.documentElement.classList.add("dark");
+        document.body.style.backgroundColor = "#0f0f0f";
+        document.body.style.color = "#ffffff";
       } else {
         document.documentElement.classList.remove("dark");
+        document.body.style.backgroundColor = "#ffffff";
+        document.body.style.color = "#0f0f0f";
       }
     } else {
       // use system preference
@@ -21,9 +25,13 @@ const ThemeToggle = () => {
       if (prefersDark) {
         setTheme("dark");
         document.documentElement.classList.add("dark");
+        document.body.style.backgroundColor = "#0f0f0f";
+        document.body.style.color = "#ffffff";
       } else {
         setTheme("light");
         document.documentElement.classList.remove("dark");
+        document.body.style.backgroundColor = "#ffffff";
+        document.body.style.color = "#0f0f0f";
       }
     }
   }, []);
@@ -33,10 +41,14 @@ const ThemeToggle = () => {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
       setTheme("light");
+      document.body.style.backgroundColor = "#ffffff";
+      document.body.style.color = "#0f0f0f";
     } else {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
       setTheme("dark");
+      document.body.style.backgroundColor = "#0f0f0f";
+      document.body.style.color = "#ffffff";
     }
   };
 
@@ -44,7 +56,7 @@ const ThemeToggle = () => {
     <button
       aria-label="Toggle theme"
       onClick={toggleTheme}
-      className="p-2 rounded-md text-gray-300 hover:text-green focus:outline-none focus:ring-2 focus:ring-green transition-colors"
+      className="p-2 rounded-md text-gray-700 hover:text-green focus:outline-none focus:ring-2 focus:ring-green transition-colors"
       title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
       {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
