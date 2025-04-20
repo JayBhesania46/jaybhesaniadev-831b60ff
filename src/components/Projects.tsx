@@ -4,18 +4,33 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "Receipt Processing API",
+    tech: "Java, Spring Boot, DynamoDB, Docker",
     description:
-      "High-performance RESTful API supporting 100+ requests per second. Java, Spring Boot, Docker, DynamoDB.",
+      "Built RESTful API, handled 100+ req/sec, 95% accuracy in reward validation.",
   },
   {
     title: "Apartment Scout",
+    tech: "Node.js, MongoDB, Real-time Chat",
     description:
-      "Web app for international students to find verified accommodations. Node.js, MongoDB, Real-time Chat.",
+      "Searchable student housing app with real-time messaging.",
   },
   {
     title: "Baby Care App",
+    tech: "React, Spring Boot, AWS, MySQL",
     description:
-      "Scrum-led development with role-based access and encryption protocols. React, Spring Boot, AWS, MySQL.",
+      "Dashboard for parents to track baby activities, secure role-based access.",
+  },
+  {
+    title: "Search Engine Tool",
+    tech: "HTML, JavaScript, Node.js",
+    description:
+      "Web crawler that counts keyword frequency and ranks results.",
+  },
+  {
+    title: "Heart & Stroke Analysis",
+    tech: "Python, ML",
+    description:
+      "Trained 8 models on Kaggle health dataset. SVM model reached 91% accuracy for stroke prediction.",
   },
 ];
 
@@ -39,20 +54,20 @@ const Projects = () => {
           aria-label="My projects"
         >
           {projects.map((project, i) => (
-            <motion.div
+            <motion.article
               key={i}
               className="bg-gray-900 rounded-lg p-6 text-white shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 visible: { opacity: 1, y: 0 },
               }}
-              role="article"
               tabIndex={0}
               aria-label={`Project: ${project.title}`}
             >
-              <h3 className="text-xl font-semibold mb-2 font-spaceGrotesk">{project.title}</h3>
+              <h3 className="text-xl font-semibold mb-1 font-spaceGrotesk">{project.title}</h3>
+              <p className="text-green text-sm mb-3 font-mono">{project.tech}</p>
               <p className="text-gray-300 font-inter">{project.description}</p>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
       </div>

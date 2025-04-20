@@ -1,5 +1,5 @@
 
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -13,7 +13,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl font-spaceGrotesk font-semibold text-green"
         >
-          Let's Work Together
+          Let&apos;s Connect!
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -21,8 +21,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-gray-400 max-w-md mx-auto font-inter"
         >
-          Feel free to reach out via email or social links below. I'm open to new
-          opportunities and collaborations!
+          Feel free to reach out via email or social links below. I&apos;m open to new opportunities and collaborations!
         </motion.p>
 
         <motion.div
@@ -41,13 +40,13 @@ const Contact = () => {
             work.jaybhesania@gmail.com
           </a>
           <a
-            href="https://github.com/JayBhesania"
+            href="https://github.com/JayBhesania46"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block w-full text-green hover:underline font-inter font-semibold text-lg"
           >
             <Github className="inline mr-2" />
-            github.com/JayBhesania
+            github.com/JayBhesania46
           </a>
           <a
             href="https://linkedin.com/in/JayBhesania"
@@ -57,6 +56,15 @@ const Contact = () => {
           >
             <Linkedin className="inline mr-2" />
             linkedin.com/in/JayBhesania
+          </a>
+          <a
+            href="/resume.pdf"
+            download
+            className="inline-block w-full bg-green text-black font-semibold py-3 rounded-md mt-4 hover:bg-green/90 transition"
+            aria-label="Download Resume"
+          >
+            <Download className="inline mr-2 align-text-bottom" />
+            Download Resume
           </a>
         </motion.div>
       </div>

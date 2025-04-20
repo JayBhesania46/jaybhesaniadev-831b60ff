@@ -48,10 +48,11 @@ const Hero = () => {
         className="mt-10 flex gap-6 justify-center"
       >
         <a
-          href="https://github.com/JayBhesania"
+          href="https://github.com/JayBhesania46"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-full bg-green px-6 py-3 font-semibold text-black shadow-lg transition-colors hover:bg-green/90 focus:outline-none focus:ring-2 focus:ring-green"
+          aria-label="GitHub Profile"
         >
           <Github className="mr-2" />
           GitHub
@@ -61,6 +62,7 @@ const Hero = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-full border-2 border-green px-6 py-3 font-semibold text-green shadow-lg transition-colors hover:bg-green hover:text-black focus:outline-none focus:ring-2 focus:ring-green"
+          aria-label="LinkedIn Profile"
         >
           <Linkedin className="mr-2" />
           LinkedIn

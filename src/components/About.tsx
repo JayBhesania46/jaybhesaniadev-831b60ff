@@ -1,8 +1,16 @@
 
 import { motion } from "framer-motion";
 
+const skills = [
+  "Java", "Python", "JavaScript",
+  "HTML", "CSS", "React", "Node.js", "Spring Boot",
+  "SQL", "MongoDB", "PostgreSQL", "MySQL",
+  "AWS", "Docker",
+  "Git", "Jira", "Agile", "SDLC",
+];
+
 const About = () => {
-  const paragraph = `I am Jay Bhesania, a passionate software developer specializing in backend development with expertise in Java, Spring Boot, Node.js, and AWS. I enjoy crafting scalable, efficient, and clean code to bring impactful digital solutions to life.`;
+  const paragraph = `Results-driven Software Developer with 3 years of experience designing and implementing scalable software solutions. Passionate about solving complex problems, optimizing performance, and building impactful software products.`;
 
   return (
     <motion.section
@@ -17,7 +25,15 @@ const About = () => {
         <h2 className="text-3xl font-spaceGrotesk font-semibold mb-6 text-green">
           About Me
         </h2>
-        <p className="text-lg font-inter leading-relaxed">{paragraph}</p>
+        <p className="text-lg font-inter leading-relaxed mb-8">{paragraph}</p>
+        <h3 className="mb-4 font-spaceGrotesk font-semibold text-xl text-green">Technical Skills</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm font-mono font-semibold text-gray-300">
+          {skills.map((skill) => (
+            <div key={skill} className="border border-green rounded px-3 py-1 text-center hover:bg-green hover:text-black transition-colors cursor-default select-none">
+              {skill}
+            </div>
+          ))}
+        </div>
         <hr className="border-gray-700 border mt-12" />
       </div>
     </motion.section>
