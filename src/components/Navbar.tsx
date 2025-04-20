@@ -1,6 +1,6 @@
-
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -15,7 +15,6 @@ const Navbar = () => {
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Update active on scroll
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.pageYOffset;
@@ -51,12 +50,15 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-black/60 border-b border-gray-800">
       <nav className="container mx-auto px-6 py-3 flex items-center justify-between">
-        <div className="text-green font-spaceGrotesk font-bold text-lg cursor-pointer" onClick={() => handleNavClick("home")}>
+        <div
+          className="text-green font-spaceGrotesk font-bold text-lg cursor-pointer"
+          onClick={() => handleNavClick("home")}
+        >
           Jay Bhesania
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-8 text-gray-300 text-sm font-medium select-none">
+        <ul className="hidden md:flex space-x-8 text-gray-300 text-sm font-medium select-none items-center">
           {navItems.map(({ id, label }) => {
             const isActive = active === id;
             return (
@@ -76,6 +78,10 @@ const Navbar = () => {
               </li>
             );
           })}
+          {/* Theme Toggle Button */}
+          <li>
+            <ThemeToggle />
+          </li>
         </ul>
 
         {/* Mobile menu button */}
@@ -107,6 +113,10 @@ const Navbar = () => {
               </li>
             );
           })}
+          {/* Theme toggle for mobile below the navigation */}
+          <li>
+            <ThemeToggle />
+          </li>
           {/* Download Resume button */}
           <li>
             <a
