@@ -1,14 +1,9 @@
 
 const Footer = () => {
   return (
-    <footer className="py-6 text-center text-slate">
-      <div className="container mx-auto px-6">
-        <p className="font-mono text-sm">
-          Designed & Built by Jay Bhesania
-        </p>
-        <p className="font-mono text-xs mt-2">
-          &copy; {new Date().getFullYear()} All Rights Reserved
-        </p>
+    <footer className="bg-[#0f0f0f] py-6 text-center text-gray-500 font-inter text-sm">
+      <div className="container mx-auto px-6 lg:px-16">
+        © Jay Bhesania, 2025
       </div>
     </footer>
   );

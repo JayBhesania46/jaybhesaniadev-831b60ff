@@ -1,39 +1,36 @@
 
-import { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Education from '../components/Education';
-import Experience from '../components/Experience';
-import Projects from '../components/Projects';
-import Footer from '../components/Footer';
+import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Education from "../components/Education";
+import Experience from "../components/Experience";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const Index = () => {
-  // We simplify the page showing only relevant sections matching the sample: header, hero, projects, footer
+  // Show content after mount (for smooth animations / avoid SSR issues)
   const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
   return (
-    <>
-      <div className="min-h-screen bg-[#0b101d] text-white">
-        {mounted && (
-          <>
-            <Header />
-            <main className="pt-24">
-              <Hero />
-              <About />
-              <Education />
-              <Experience />
-              <Projects />
-            </main>
-            <Footer />
-          </>
-        )}
-      </div>
-    </>
+    <div className="bg-[#0f0f0f] min-h-screen text-white scroll-smooth">
+      {mounted && (
+        <>
+          <Navbar />
+          <main className="pt-16">
+            <Hero />
+            <About />
+            <Education />
+            <Experience />
+            <Projects />
+            <Contact />
+          </main>
+          <Footer />
+        </>
+      )}
+    </div>
   );
 };
 

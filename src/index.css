@@ -1,134 +1,38 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 225 30% 12%;
-    --foreground: 213 33% 93%;
-
-    --card: 225 30% 12%;
-    --card-foreground: 213 33% 93%;
-
-    --popover: 225 30% 12%;
-    --popover-foreground: 213 33% 93%;
-
-    --primary: 170 100% 70%;
-    --primary-foreground: 225 30% 12%;
-
-    --secondary: 220 16% 36%;
-    --secondary-foreground: 213 33% 93%;
-
-    --muted: 220 16% 26%;
-    --muted-foreground: 220 16% 76%;
-
-    --accent: 220 16% 26%;
-    --accent-foreground: 213 33% 93%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 16% 26%;
-    --input: 220 16% 26%;
-    --ring: 170 100% 70%;
-
-    --radius: 0.5rem;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
-    @apply bg-navy text-slate-lighter;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  /* Scrollbar styling */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-navy;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-muted rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-secondary;
+    font-family: 'Inter', 'sans-serif';
+    background-color: #0f0f0f;
+    color: white;
   }
 }
 
-@layer components {
-  .section-heading {
-    @apply flex items-center mb-6 text-2xl font-semibold text-slate-lightest;
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', 'sans-serif';
   }
+  .font-spaceGrotesk {
+    font-family: 'Space Grotesk', 'sans-serif';
+  }
+}
 
-  .section-heading::before {
-    content: "0" counter(section) ".";
-    counter-increment: section;
-    @apply mr-2 text-green font-mono text-xl;
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% center;
   }
+  50% {
+    background-position: 100% center;
+  }
+}
 
-  .section-heading::after {
-    content: "";
-    @apply ml-4 h-px bg-muted flex-grow;
-  }
-
-  .nav-item {
-    @apply relative inline-block px-4 py-2 font-mono text-sm transition-colors duration-300 text-slate hover:text-green;
-  }
-
-  .nav-item span {
-    @apply text-green mr-1;
-  }
-
-  .project-card {
-    @apply relative grid md:grid-cols-12 gap-2 md:gap-10 items-center;
-  }
-
-  .project-card .project-content {
-    @apply relative md:col-span-7 rounded-md z-10 p-6 md:p-0;
-  }
-
-  .project-card .project-image {
-    @apply relative md:col-span-8 md:col-start-5 z-0 rounded-md overflow-hidden;
-  }
-
-  .project-card:nth-child(even) .project-content {
-    @apply md:col-start-6 md:text-right;
-  }
-
-  .project-card:nth-child(even) .project-image {
-    @apply md:col-start-1;
-  }
-
-  .project-tech-list {
-    @apply flex flex-wrap mt-6 gap-x-4 text-sm font-mono text-slate;
-  }
-
-  .project-card:nth-child(even) .project-tech-list {
-    @apply md:justify-end;
-  }
-
-  .experience-item {
-    @apply relative pl-8 mb-12 before:absolute before:left-0 before:top-2 before:h-full before:w-px before:bg-muted;
-  }
-
-  .experience-item::after {
-    content: "";
-    @apply absolute left-0 top-2 h-3 w-3 rounded-full bg-green -translate-x-[40%];
-  }
-
-  .contact-link {
-    @apply inline-flex items-center text-green hover:underline font-mono;
-  }
+.animate-gradient-x {
+  animation: gradient-x 5s ease infinite;
+  background-size: 200% auto;
+  background-repeat: repeat-x;
 }

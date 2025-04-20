@@ -1,96 +1,71 @@
 
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+
+const gradientText = "Jay Bhesania";
 
 const Hero = () => {
+  const letterVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.05, type: "spring", stiffness: 50 },
+    }),
+  };
+
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center bg-[#0b101d] relative overflow-hidden px-4 text-white text-center"
+      className="relative flex min-h-screen flex-col items-center justify-center px-4 text-center bg-[#0f0f0f]"
     >
-      {/* Background constellation pattern can be added here later */}
+      {/* Animated Gradient Name */}
+      <h1
+        aria-label="Jay Bhesania"
+        className="text-5xl sm:text-7xl font-bold font-spaceGrotesk bg-gradient-to-r from-green to-green/70 bg-clip-text text-transparent animate-gradient-x mb-4"
+      >
+        {Array.from(gradientText).map((char, i) => (
+          <motion.span key={i} custom={i} variants={letterVariants} initial="initial" animate="animate" className="inline-block">
+            {char}
+          </motion.span>
+        ))}
+      </h1>
+      {/* Subtitle */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: gradientText.length * 0.05 + 0.3, duration: 0.6 }}
+        className="text-lg sm:text-xl text-gray-400 font-medium font-spaceGrotesk max-w-md mx-auto"
+      >
+        Backend Developer • Java | Spring Boot | Node.js | AWS
+      </motion.p>
 
-      <div className="max-w-3xl">
-        {/* Avatar with wave emoji */}
-        <div className="relative mx-auto mb-6 w-[96px] h-[96px] rounded-full border-4 border-white overflow-hidden">
-          <img
-            src="/lovable-uploads/e678c3bb-c40c-4df1-8039-904e50108c6a.png"
-            alt="Ben's Avatar"
-            className="w-full h-full object-cover"
-          />
-          <span
-            aria-label="waving hand emoji"
-            role="img"
-            className="absolute bottom-0 right-0 -mb-2 -mr-2 text-3xl animate-wave"
-            style={{
-              animationTimingFunction: 'linear',
-              animationIterationCount: 'infinite',
-              animationDuration: '3s',
-            }}
-          >
-            👋
-          </span>
-        </div>
-
-        {/* Intro text with styles */}
-        <h1 className="text-3xl sm:text-4xl font-semibold leading-snug max-w-[28rem] mx-auto">
-          Hello, I'm <strong>Ben</strong>. I'm a <strong>software engineer</strong>{' '}
-          at{' '}
-          <a
-            href="https://humanforce.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline font-semibold hover:text-green-400 transition-colors"
-          >
-            Humanforce
-          </a>{' '}
-          in the platform team. I'm currently working with Laravel, React.js, Node.js,
-          GraphQL, and AWS.
-        </h1>
-
-        {/* Buttons for GitHub and LinkedIn */}
-        <div className="mt-8 flex justify-center gap-4">
-          <a
-            href="https://github.com/ben"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-gray-900 font-semibold shadow-md transition hover:bg-gray-200"
-          >
-            <Github size={20} />
-            GitHub
-          </a>
-          <a
-            href="https://linkedin.com/in/ben"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 border border-gray-700 text-gray-300 font-semibold shadow-md transition hover:bg-gray-800 hover:text-white"
-          >
-            <Linkedin size={20} />
-            LinkedIn
-          </a>
-        </div>
-      </div>
-
-      {/* Wave hand keyframes animation */}
-      <style>
-        {`
-          @keyframes wave {
-            0% { transform: rotate( 0.0deg) }
-            15% { transform: rotate(14.0deg) }
-            30% { transform: rotate(-8.0deg) }
-            40% { transform: rotate(14.0deg) }
-            50% { transform: rotate(-4.0deg) }
-            60% { transform: rotate(10.0deg) }
-            70% { transform: rotate( 0.0deg) }
-            100% { transform: rotate( 0.0deg) }
-          }
-          .animate-wave {
-            animation-name: wave;
-            animation-duration: 2.5s;
-            animation-iteration-count: infinite;
-            transform-origin: 70% 70%;
-          }
-        `}
-      </style>
+      {/* Buttons */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: gradientText.length * 0.05 + 0.6, duration: 0.6 }}
+        className="mt-10 flex gap-6 justify-center"
+      >
+        <a
+          href="https://github.com/JayBhesania"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center rounded-full bg-green px-6 py-3 font-semibold text-black shadow-lg transition-colors hover:bg-green/90 focus:outline-none focus:ring-2 focus:ring-green"
+        >
+          <Github className="mr-2" />
+          GitHub
+        </a>
+        <a
+          href="https://linkedin.com/in/JayBhesania"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center rounded-full border-2 border-green px-6 py-3 font-semibold text-green shadow-lg transition-colors hover:bg-green hover:text-black focus:outline-none focus:ring-2 focus:ring-green"
+        >
+          <Linkedin className="mr-2" />
+          LinkedIn
+        </a>
+      </motion.div>
     </section>
   );
 };
