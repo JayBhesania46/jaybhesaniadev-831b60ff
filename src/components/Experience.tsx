@@ -51,15 +51,15 @@ const Experience = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="py-20 bg-[#0f0f0f]"
+      className="py-20 bg-white"
     >
-      <div className="container mx-auto px-6 lg:px-16 max-w-5xl">
+      <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-gray-900">
         <h2 className="text-3xl font-spaceGrotesk font-semibold mb-16 text-green text-center">
           Experience
         </h2>
         <div className="relative grid grid-cols-1 md:grid-cols-9 gap-6">
           {/* Vertical timeline line */}
-          <div className="absolute top-0 left-1/2 md:left-[calc(50%-1px)] w-[2px] h-full bg-green opacity-30 pointer-events-none"></div>
+          <div className="absolute top-0 left-1/2 md:left-[calc(50%-1px)] w-[2px] h-full bg-green opacity-70 pointer-events-none"></div>
 
           {experiences.map((exp, idx) => {
             const isLeft = idx % 2 === 0;
@@ -76,12 +76,12 @@ const Experience = () => {
               >
                 <div
                   aria-label={`${exp.title} at ${exp.company}`}
-                  className="bg-gray-900 rounded-lg p-6 shadow-lg text-white hover:scale-[1.03] transition-transform duration-300 cursor-default"
+                  className="bg-green/10 rounded-lg p-6 shadow-lg text-gray-900 hover:scale-[1.03] transition-transform duration-300 cursor-default border border-green/30"
                 >
                   <h3 className="font-semibold text-xl mb-1">{exp.title}</h3>
                   <p className="text-green font-semibold mb-2">{exp.company}</p>
-                  <p className="italic text-gray-400 mb-4">{exp.location}</p>
-                  <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
+                  <p className="italic text-gray-600 mb-4">{exp.location}</p>
+                  <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
                     {exp.description.map((point, i) => (
                       <li key={i}>{point}</li>
                     ))}
@@ -100,7 +100,7 @@ const Experience = () => {
             >
               <div className="flex flex-col items-center">
                 <span className="w-8 h-8 flex items-center justify-center rounded-full bg-green shadow-lg">
-                  <Briefcase className="text-black" size={18} />
+                  <Briefcase className="text-white" size={18} />
                 </span>
                 <span className="mt-3 text-green font-mono text-xs select-none whitespace-nowrap">
                   {exp.date}
