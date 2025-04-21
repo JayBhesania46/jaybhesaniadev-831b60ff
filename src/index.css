@@ -8,8 +8,8 @@
 @layer base {
   body {
     font-family: 'Inter', 'sans-serif';
-    background-color: #fff;
-    color: #1f2937; /* dark gray text */
+    background-color: #FFFFFF;
+    color: #2B2B2B;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
