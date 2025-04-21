@@ -8,8 +8,8 @@
 @layer base {
   body {
     font-family: 'Inter', 'sans-serif';
-    background-color: #FFFFFF;
-    color: #2B2B2B;
+    background-color: #0F172A;
+    color: #E2E8F0;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
@@ -36,4 +36,52 @@
   animation: gradient-x 5s ease infinite;
   background-size: 200% auto;
   background-repeat: repeat-x;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E293B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4F46E5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366F1;
+}
+
+/* Gradient accent */
+.text-gradient {
+  background: linear-gradient(90deg, #4F46E5, #06B6D4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.bg-gradient {
+  background: linear-gradient(90deg, #4F46E5, #06B6D4);
 }

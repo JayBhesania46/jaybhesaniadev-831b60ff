@@ -1,17 +1,17 @@
 
-import { Mail, Linkedin, Github, Download } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-[#f5f5f5]">
-      <div className="container mx-auto px-6 lg:px-16 max-w-3xl text-[#2B2B2B] text-center space-y-8">
+    <section id="contact" className="py-24 bg-[#0F172A]">
+      <div className="container mx-auto px-6 lg:px-16 max-w-3xl text-[#E2E8F0] text-center space-y-8">
         <motion.h2
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl font-spaceGrotesk font-semibold text-[#2B2B2B]"
+          className="text-3xl font-spaceGrotesk font-semibold reveal"
         >
           Let&apos;s Connect!
         </motion.h2>
@@ -19,13 +19,13 @@ const Contact = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-[#555555] max-w-md mx-auto font-inter"
+          className="text-[#94A3B8] max-w-md mx-auto font-inter reveal"
         >
           Feel free to reach out via email or social links below. I&apos;m open to new opportunities and collaborations!
         </motion.p>
 
         <motion.div
-          className="space-y-4"
+          className="space-y-6 reveal"
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -34,39 +34,80 @@ const Contact = () => {
         >
           <a
             href="mailto:work.jaybhesania@gmail.com"
-            className="inline-block w-full text-[#2B2B2B] hover:underline font-inter font-semibold text-lg"
+            className="bg-[#1E293B] hover:bg-[#2D3748] transition-colors p-4 rounded-lg flex items-center justify-center gap-3 text-[#E2E8F0] font-inter font-semibold text-lg"
           >
-            <Mail className="inline mr-2" />
+            <Mail className="text-[#4F46E5]" />
             work.jaybhesania@gmail.com
           </a>
-          <a
-            href="https://github.com/JayBhesania46"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block w-full text-[#2B2B2B] hover:underline font-inter font-semibold text-lg"
-          >
-            <Github className="inline mr-2" />
-            github.com/JayBhesania46
-          </a>
-          <a
-            href="https://linkedin.com/in/JayBhesania"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block w-full text-[#2B2B2B] hover:underline font-inter font-semibold text-lg"
-          >
-            <Linkedin className="inline mr-2" />
-            linkedin.com/in/JayBhesania
-          </a>
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-block w-full bg-[#2B2B2B] text-white font-semibold py-3 rounded-md mt-4 hover:bg-[#444444] transition"
-            aria-label="Download Resume"
-          >
-            <Download className="inline mr-2 align-text-bottom" />
-            Download Resume
-          </a>
+          
+          <div className="flex gap-4">
+            <a
+              href="https://github.com/JayBhesania46"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-[#1E293B] hover:bg-[#2D3748] transition-colors p-4 rounded-lg flex items-center justify-center gap-3 text-[#E2E8F0] font-inter font-semibold"
+            >
+              <Github className="text-[#4F46E5]" />
+              GitHub
+            </a>
+            
+            <a
+              href="https://linkedin.com/in/JayBhesania"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-[#1E293B] hover:bg-[#2D3748] transition-colors p-4 rounded-lg flex items-center justify-center gap-3 text-[#E2E8F0] font-inter font-semibold"
+            >
+              <Linkedin className="text-[#4F46E5]" />
+              LinkedIn
+            </a>
+          </div>
         </motion.div>
+        
+        {/* Simple Contact Form */}
+        <motion.form 
+          className="mt-12 space-y-6 text-left reveal bg-[#1E293B] p-6 rounded-lg border border-[#2D3748]"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-[#94A3B8] mb-2">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              placeholder="Your name" 
+              className="w-full px-4 py-2 bg-[#2D3748] text-[#E2E8F0] border border-[#4B5563] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4F46E5]" 
+            />
+          </div>
+          
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-[#94A3B8] mb-2">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="your.email@example.com" 
+              className="w-full px-4 py-2 bg-[#2D3748] text-[#E2E8F0] border border-[#4B5563] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4F46E5]" 
+            />
+          </div>
+          
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-[#94A3B8] mb-2">Message</label>
+            <textarea 
+              id="message" 
+              rows={4} 
+              placeholder="Your message" 
+              className="w-full px-4 py-2 bg-[#2D3748] text-[#E2E8F0] border border-[#4B5563] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4F46E5]"
+            ></textarea>
+          </div>
+          
+          <button 
+            type="button" 
+            className="w-full py-3 px-6 bg-gradient rounded-md font-semibold text-white hover:opacity-90 transition-opacity"
+          >
+            Send Message
+          </button>
+          <p className="text-xs text-center text-[#94A3B8]">(Note: This is a placeholder form - no backend connection)</p>
+        </motion.form>
       </div>
     </section>
   );

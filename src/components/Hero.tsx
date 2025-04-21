@@ -1,72 +1,90 @@
 
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
-const gradientText = "Jay Bhesania";
-
 const Hero = () => {
-  const letterVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.05, type: "spring", stiffness: 50 },
-    }),
-  };
-
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center px-4 text-center bg-white"
+      className="relative flex min-h-screen flex-col items-center justify-center px-4 text-center bg-[#0F172A]"
     >
       {/* Animated Name */}
-      <h1
-        aria-label="Jay Bhesania"
-        className="text-5xl sm:text-7xl font-bold font-spaceGrotesk text-[#2B2B2B] mb-4"
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
       >
-        {Array.from(gradientText).map((char, i) => (
-          <motion.span key={i} custom={i} variants={letterVariants} initial="initial" animate="animate" className="inline-block">
-            {char}
-          </motion.span>
-        ))}
-      </h1>
+        <h1 className="text-5xl sm:text-7xl font-bold font-spaceGrotesk mb-4">
+          <span className="text-gradient">Jay Bhesania</span>
+        </h1>
+      </motion.div>
+
       {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: gradientText.length * 0.05 + 0.3, duration: 0.6 }}
-        className="text-lg sm:text-xl text-[#555555] font-medium font-spaceGrotesk max-w-md mx-auto"
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="text-lg sm:text-xl text-[#94A3B8] font-medium font-spaceGrotesk max-w-md mx-auto"
       >
-        Backend Developer • Java | Spring Boot | Node.js | AWS
+        Software Developer • Java | Spring Boot | Node.js | AWS
       </motion.p>
 
-      {/* Buttons */}
+      {/* Social Links */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: gradientText.length * 0.05 + 0.6, duration: 0.6 }}
+        transition={{ duration: 0.8, delay: 1.0 }}
         className="mt-10 flex gap-6 justify-center"
       >
+        <a
+          href="mailto:work.jaybhesania@gmail.com"
+          className="group flex items-center gap-2 text-[#94A3B8] hover:text-[#E2E8F0] transition-colors"
+          aria-label="Email"
+        >
+          <span className="p-2 rounded-full bg-[#1E293B] group-hover:bg-[#4F46E5] transition-colors">
+            <Mail size={20} />
+          </span>
+          <span className="hidden sm:inline">work.jaybhesania@gmail.com</span>
+        </a>
+        
         <a
           href="https://github.com/JayBhesania46"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center rounded-full bg-[#2B2B2B] px-6 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-[#444444] focus:outline-none focus:ring-2 focus:ring-[#2B2B2B]"
+          className="group flex items-center gap-2 text-[#94A3B8] hover:text-[#E2E8F0] transition-colors"
           aria-label="GitHub Profile"
         >
-          <Github className="mr-2" />
-          GitHub
+          <span className="p-2 rounded-full bg-[#1E293B] group-hover:bg-[#4F46E5] transition-colors">
+            <Github size={20} />
+          </span>
+          <span className="hidden sm:inline">GitHub</span>
         </a>
+        
         <a
           href="https://linkedin.com/in/JayBhesania"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center rounded-full border-2 border-[#2B2B2B] px-6 py-3 font-semibold text-[#2B2B2B] shadow-lg transition-colors hover:bg-[#2B2B2B] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#2B2B2B]"
+          className="group flex items-center gap-2 text-[#94A3B8] hover:text-[#E2E8F0] transition-colors"
           aria-label="LinkedIn Profile"
         >
-          <Linkedin className="mr-2" />
-          LinkedIn
+          <span className="p-2 rounded-full bg-[#1E293B] group-hover:bg-[#4F46E5] transition-colors">
+            <Linkedin size={20} />
+          </span>
+          <span className="hidden sm:inline">LinkedIn</span>
         </a>
+      </motion.div>
+      
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+      >
+        <div className="flex flex-col items-center">
+          <span className="text-[#94A3B8] text-sm mb-2">Scroll</span>
+          <div className="w-[2px] h-10 bg-gradient-to-b from-[#4F46E5] to-[#06B6D4]"></div>
+        </div>
       </motion.div>
     </section>
   );
