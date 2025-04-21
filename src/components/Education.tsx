@@ -1,31 +1,67 @@
 
+import { motion } from 'framer-motion';
+import { GraduationCap } from 'lucide-react';
+
+const educations = [
+  {
+    id: 'masters',
+    degree: "Master's in Computer Science",
+    school: "Stevens Institute of Technology",
+    location: "Hoboken, NJ, USA",
+    date: "2022 - 2024"
+  },
+  {
+    id: 'bachelors',
+    degree: "Bachelor's in Computer Science",
+    school: "Parul University",
+    location: "Vadodara, Gujarat, India",
+    date: "2016 - 2020"
+  }
+];
+
 const Education = () => {
   return (
-    <section id="education" className="py-20 bg-navy-light/30">
-      <div className="container mx-auto px-6 lg:px-16">
-        <h2 className="section-heading">Education</h2>
+    <motion.section
+      id="education"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="py-20 bg-[#f5f5f5]"
+    >
+      <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-[#2B2B2B]">
+        <h2 className="text-3xl font-spaceGrotesk font-semibold mb-16 text-[#2B2B2B] text-center">
+          Education
+        </h2>
         
         <div className="space-y-12">
-          <div className="experience-item">
-            <h3 className="text-xl font-semibold text-slate-lightest mb-1">Master's in Computer Science</h3>
-            <p className="text-green mb-2">Stevens Institute of Technology</p>
-            <p className="text-slate mb-4">Hoboken, NJ, USA</p>
-            <div className="flex items-center text-sm text-slate-light">
-              <span className="font-mono">2022 - 2024</span>
-            </div>
-          </div>
-          
-          <div className="experience-item">
-            <h3 className="text-xl font-semibold text-slate-lightest mb-1">Bachelor's in Computer Science</h3>
-            <p className="text-green mb-2">Parul University</p>
-            <p className="text-slate mb-4">Vadodara, Gujarat, India</p>
-            <div className="flex items-center text-sm text-slate-light">
-              <span className="font-mono">2016 - 2020</span>
-            </div>
-          </div>
+          {educations.map((edu) => (
+            <motion.div
+              key={edu.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-white rounded-lg p-6 shadow-lg text-[#2B2B2B] border border-[#e0e0e0]"
+            >
+              <div className="flex items-start gap-4">
+                <div className="bg-[#2B2B2B] rounded-full p-3 mt-1">
+                  <GraduationCap className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-1">{edu.degree}</h3>
+                  <p className="font-medium mb-2">{edu.school}</p>
+                  <p className="italic text-[#595959] mb-4">{edu.location}</p>
+                  <div className="flex items-center text-sm">
+                    <span className="font-mono text-[#2B2B2B]">{edu.date}</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

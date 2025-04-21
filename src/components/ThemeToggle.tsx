@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     // On mount, check localStorage or system preference
@@ -12,12 +12,12 @@ const ThemeToggle = () => {
       setTheme(savedTheme);
       if (savedTheme === "dark") {
         document.documentElement.classList.add("dark");
-        document.body.style.backgroundColor = "#0f0f0f";
+        document.body.style.backgroundColor = "#2B2B2B";
         document.body.style.color = "#ffffff";
       } else {
         document.documentElement.classList.remove("dark");
         document.body.style.backgroundColor = "#ffffff";
-        document.body.style.color = "#0f0f0f";
+        document.body.style.color = "#2B2B2B";
       }
     } else {
       // use system preference
@@ -25,13 +25,13 @@ const ThemeToggle = () => {
       if (prefersDark) {
         setTheme("dark");
         document.documentElement.classList.add("dark");
-        document.body.style.backgroundColor = "#0f0f0f";
+        document.body.style.backgroundColor = "#2B2B2B";
         document.body.style.color = "#ffffff";
       } else {
         setTheme("light");
         document.documentElement.classList.remove("dark");
         document.body.style.backgroundColor = "#ffffff";
-        document.body.style.color = "#0f0f0f";
+        document.body.style.color = "#2B2B2B";
       }
     }
   }, []);
@@ -42,12 +42,12 @@ const ThemeToggle = () => {
       localStorage.setItem("theme", "light");
       setTheme("light");
       document.body.style.backgroundColor = "#ffffff";
-      document.body.style.color = "#0f0f0f";
+      document.body.style.color = "#2B2B2B";
     } else {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
       setTheme("dark");
-      document.body.style.backgroundColor = "#0f0f0f";
+      document.body.style.backgroundColor = "#2B2B2B";
       document.body.style.color = "#ffffff";
     }
   };
@@ -56,7 +56,7 @@ const ThemeToggle = () => {
     <button
       aria-label="Toggle theme"
       onClick={toggleTheme}
-      className="p-2 rounded-md text-gray-700 hover:text-green focus:outline-none focus:ring-2 focus:ring-green transition-colors"
+      className="p-2 rounded-md text-[#2B2B2B] hover:text-[#555555] focus:outline-none focus:ring-2 focus:ring-[#2B2B2B] transition-colors"
       title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
       {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}

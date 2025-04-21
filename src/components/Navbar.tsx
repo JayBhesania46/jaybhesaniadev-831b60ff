@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -48,17 +49,17 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-black/60 border-b border-gray-800">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-white/80 border-b border-[#e0e0e0]">
       <nav className="container mx-auto px-6 py-3 flex items-center justify-between">
         <div
-          className="text-green font-spaceGrotesk font-bold text-lg cursor-pointer"
+          className="text-[#2B2B2B] font-spaceGrotesk font-bold text-lg cursor-pointer"
           onClick={() => handleNavClick("home")}
         >
           Jay Bhesania
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-8 text-gray-300 text-sm font-medium select-none items-center">
+        <ul className="hidden md:flex space-x-8 text-[#555555] text-sm font-medium select-none items-center">
           {navItems.map(({ id, label }) => {
             const isActive = active === id;
             return (
@@ -66,13 +67,13 @@ const Navbar = () => {
                 <button
                   onClick={() => handleNavClick(id)}
                   className={`relative py-2 px-3 rounded-md transition-colors duration-300 ${
-                    isActive ? "text-green" : "hover:text-green"
+                    isActive ? "text-[#2B2B2B]" : "hover:text-[#2B2B2B]"
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
                   {label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-green rounded" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-[#2B2B2B] rounded" />
                   )}
                 </button>
               </li>
@@ -86,7 +87,7 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-gray-300 focus:outline-none focus:ring-2 focus:ring-green rounded"
+          className="md:hidden text-[#2B2B2B] focus:outline-none focus:ring-2 focus:ring-[#2B2B2B] rounded"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -96,7 +97,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden bg-black/90 backdrop-blur-md text-gray-300 flex flex-col space-y-4 p-6 border-t border-gray-900 select-none">
+        <ul className="md:hidden bg-white/95 backdrop-blur-md text-[#555555] flex flex-col space-y-4 p-6 border-t border-[#e0e0e0] select-none">
           {navItems.map(({ id, label }) => {
             const isActive = active === id;
             return (
@@ -104,7 +105,7 @@ const Navbar = () => {
                 <button
                   onClick={() => handleNavClick(id)}
                   className={`w-full text-left py-2 px-3 rounded-md transition-colors duration-300 ${
-                    isActive ? "text-green" : "hover:text-green"
+                    isActive ? "text-[#2B2B2B]" : "hover:text-[#2B2B2B]"
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -122,7 +123,7 @@ const Navbar = () => {
             <a
               href="/resume.pdf"
               download
-              className="inline-block w-full text-center bg-green text-black font-semibold py-2 rounded-md hover:bg-green/90 transition"
+              className="inline-block w-full text-center bg-[#2B2B2B] text-white font-semibold py-2 rounded-md hover:bg-[#444444] transition"
             >
               Download Resume
             </a>

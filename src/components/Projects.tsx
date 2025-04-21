@@ -38,10 +38,10 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 bg-[#0f0f0f]"
+      className="py-24 bg-white"
     >
       <div className="container mx-auto px-6 lg:px-16 max-w-5xl">
-        <h2 className="text-3xl font-spaceGrotesk font-semibold mb-12 text-green text-center">
+        <h2 className="text-3xl font-spaceGrotesk font-semibold mb-12 text-[#2B2B2B] text-center">
           Projects
         </h2>
 
@@ -56,7 +56,7 @@ const Projects = () => {
           {projects.map((project, i) => (
             <motion.article
               key={i}
-              className="bg-gray-900 rounded-lg p-6 text-white shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+              className="bg-[#f5f5f5] rounded-lg p-6 text-[#2B2B2B] shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-[#e0e0e0]"
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 visible: { opacity: 1, y: 0 },
@@ -65,8 +65,8 @@ const Projects = () => {
               aria-label={`Project: ${project.title}`}
             >
               <h3 className="text-xl font-semibold mb-1 font-spaceGrotesk">{project.title}</h3>
-              <p className="text-green text-sm mb-3 font-mono">{project.tech}</p>
-              <p className="text-gray-300 font-inter">{project.description}</p>
+              <p className="text-[#555555] text-sm mb-3 font-mono">{project.tech}</p>
+              <p className="text-[#2B2B2B] font-inter">{project.description}</p>
             </motion.article>
           ))}
         </motion.div>
