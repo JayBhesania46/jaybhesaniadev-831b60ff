@@ -15,7 +15,7 @@ const Index = () => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className="bg-[#0f0f0f] min-h-screen text-white scroll-smooth">
+    <div className="bg-white min-h-screen text-[#2B2B2B] scroll-smooth">
       {mounted && (
         <>
           <Navbar />
@@ -35,3 +35,4 @@ const Index = () => {
 };
 
 export default Index;
+

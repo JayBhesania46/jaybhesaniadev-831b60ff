@@ -53,13 +53,13 @@ const Experience = () => {
       transition={{ duration: 0.6 }}
       className="py-20 bg-white"
     >
-      <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-gray-900">
-        <h2 className="text-3xl font-spaceGrotesk font-semibold mb-16 text-green text-center">
+      <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-[#2B2B2B]">
+        <h2 className="text-3xl font-spaceGrotesk font-semibold mb-16 text-[#2B2B2B] text-center">
           Experience
         </h2>
         <div className="relative grid grid-cols-1 md:grid-cols-9 gap-6">
           {/* Vertical timeline line */}
-          <div className="absolute top-0 left-1/2 md:left-[calc(50%-1px)] w-[2px] h-full bg-green opacity-70 pointer-events-none"></div>
+          <div className="absolute top-0 left-1/2 md:left-[calc(50%-1px)] w-[2px] h-full bg-[#2B2B2B] opacity-30 pointer-events-none"></div>
 
           {experiences.map((exp, idx) => {
             const isLeft = idx % 2 === 0;
@@ -76,12 +76,12 @@ const Experience = () => {
               >
                 <div
                   aria-label={`${exp.title} at ${exp.company}`}
-                  className="bg-green/10 rounded-lg p-6 shadow-lg text-gray-900 hover:scale-[1.03] transition-transform duration-300 cursor-default border border-green/30"
+                  className="bg-[#f0f0f0] rounded-lg p-6 shadow-lg text-[#2B2B2B] hover:scale-[1.03] transition-transform duration-300 cursor-default border border-[#c0c0c0]"
                 >
                   <h3 className="font-semibold text-xl mb-1">{exp.title}</h3>
-                  <p className="text-green font-semibold mb-2">{exp.company}</p>
-                  <p className="italic text-gray-600 mb-4">{exp.location}</p>
-                  <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
+                  <p className="font-semibold mb-2" style={{ color: '#2B2B2B' }}>{exp.company}</p>
+                  <p className="italic text-gray-600 mb-4" style={{ color: '#595959' }}>{exp.location}</p>
+                  <ul className="list-disc list-inside text-[#2B2B2B] text-sm space-y-1">
                     {exp.description.map((point, i) => (
                       <li key={i}>{point}</li>
                     ))}
@@ -99,10 +99,10 @@ const Experience = () => {
               aria-hidden="true"
             >
               <div className="flex flex-col items-center">
-                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-green shadow-lg">
+                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-[#2B2B2B] shadow-md">
                   <Briefcase className="text-white" size={18} />
                 </span>
-                <span className="mt-3 text-green font-mono text-xs select-none whitespace-nowrap">
+                <span className="mt-3 font-mono text-xs select-none whitespace-nowrap" style={{ color: '#2B2B2B' }}>
                   {exp.date}
                 </span>
               </div>
@@ -115,7 +115,8 @@ const Experience = () => {
           {experiences.map((exp) => (
             <div
               key={`mobile-date-${exp.id}`}
-              className="text-center text-green font-mono text-sm"
+              className="text-center font-mono text-sm"
+              style={{ color: '#2B2B2B' }}
             >
               {exp.date}
             </div>
