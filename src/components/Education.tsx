@@ -7,15 +7,13 @@ const educations = [
     id: 'masters',
     degree: "Master's in Computer Science",
     school: "Stevens Institute of Technology",
-    location: "Hoboken, NJ, USA",
-    date: "2022 - 2024"
+    location: "Hoboken, NJ, USA"
   },
   {
     id: 'bachelors',
     degree: "Bachelor's in Computer Science",
     school: "Parul University",
-    location: "Vadodara, Gujarat, India",
-    date: "2016 - 2020"
+    location: "Vadodara, Gujarat, India"
   }
 ];
 
@@ -51,10 +49,7 @@ const Education = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-1">{edu.degree}</h3>
                   <p className="font-medium mb-2">{edu.school}</p>
-                  <p className="italic text-[#595959] mb-4">{edu.location}</p>
-                  <div className="flex items-center text-sm">
-                    <span className="font-mono text-[#2B2B2B]">{edu.date}</span>
-                  </div>
+                  <p className="italic text-[#595959]">{edu.location}</p>
                 </div>
               </div>
             </motion.div>

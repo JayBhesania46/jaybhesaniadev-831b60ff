@@ -62,52 +62,6 @@ const Contact = () => {
             </a>
           </div>
         </motion.div>
-        
-        {/* Simple Contact Form */}
-        <motion.form 
-          className="mt-12 space-y-6 text-left reveal bg-gray-100 p-6 rounded-lg border border-gray-200"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-[#555555] mb-2">Name</label>
-            <input 
-              type="text" 
-              id="name" 
-              placeholder="Your name" 
-              className="w-full px-4 py-2 bg-white text-[#2B2B2B] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4F46E5]" 
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-[#555555] mb-2">Email</label>
-            <input 
-              type="email" 
-              id="email" 
-              placeholder="your.email@example.com" 
-              className="w-full px-4 py-2 bg-white text-[#2B2B2B] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4F46E5]" 
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-[#555555] mb-2">Message</label>
-            <textarea 
-              id="message" 
-              rows={4} 
-              placeholder="Your message" 
-              className="w-full px-4 py-2 bg-white text-[#2B2B2B] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4F46E5]"
-            ></textarea>
-          </div>
-          
-          <button 
-            type="button" 
-            className="w-full py-3 px-6 bg-gradient rounded-md font-semibold text-white hover:opacity-90 transition-opacity"
-          >
-            Send Message
-          </button>
-          <p className="text-xs text-center text-[#555555]">(Note: This is a placeholder form - no backend connection)</p>
-        </motion.form>
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ html {
 
 /* Focus styles for accessibility */
 a:focus, button:focus {
-  outline: 2px dashed #64ffda;
+  outline: 2px dashed #4F46E5;
   outline-offset: 3px;
 }
 
@@ -46,14 +46,36 @@ a:focus, button:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A192F;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8892B0;
+  background: #4F46E5;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64ffda;
+  background: #6366F1;
+}
+
+/* Button hover effects */
+.btn-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hover:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.btn-hover:hover:after {
+  transform: translateX(0);
 }
