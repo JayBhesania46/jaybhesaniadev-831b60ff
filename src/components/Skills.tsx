@@ -34,9 +34,9 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-24 bg-[#0F172A]"
+      className="py-24 bg-white"
     >
-      <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-[#E2E8F0]">
+      <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-[#2B2B2B]">
         <h2 className="text-3xl font-spaceGrotesk font-semibold mb-16 text-center reveal">
           Technical Skills
         </h2>
@@ -45,7 +45,7 @@ const Skills = () => {
           {skillsData.map((category, index) => (
             <motion.div
               key={category.category}
-              className="bg-[#1E293B] p-6 rounded-lg shadow-lg border border-[#2D3748] reveal"
+              className="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 reveal"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -64,7 +64,7 @@ const Skills = () => {
                 {category.skills.map(skill => (
                   <span 
                     key={skill}
-                    className="px-3 py-1 bg-[#2D3748] text-[#94A3B8] rounded-md text-sm hover:bg-[#4F46E5]/20 hover:text-[#4F46E5] transition-colors cursor-default"
+                    className="px-3 py-1 bg-white text-[#555555] rounded-md text-sm hover:bg-[#4F46E5]/20 hover:text-[#4F46E5] transition-colors cursor-default border border-gray-200"
                   >
                     {skill}
                   </span>

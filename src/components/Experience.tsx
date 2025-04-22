@@ -44,9 +44,9 @@ const Experience = () => {
   return (
     <motion.section
       id="experience"
-      className="py-24 bg-[#0F172A]"
+      className="py-24 bg-white"
     >
-      <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-[#E2E8F0]">
+      <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-[#2B2B2B]">
         <h2 className="text-3xl font-spaceGrotesk font-semibold mb-16 text-center reveal">
           Experience
         </h2>
@@ -60,7 +60,7 @@ const Experience = () => {
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               className="reveal"
             >
-              <div className="flex flex-col md:flex-row items-start gap-6 bg-[#1E293B] p-6 rounded-lg border border-[#2D3748] shadow-lg">
+              <div className="flex flex-col md:flex-row items-start gap-6 bg-gray-100 p-6 rounded-lg border border-gray-200 shadow-lg">
                 <div className="md:w-16 flex-shrink-0 flex justify-center">
                   <div className="w-12 h-12 rounded-full bg-[#4F46E5]/20 flex items-center justify-center">
                     <Briefcase className="text-[#4F46E5]" size={20} />
@@ -69,23 +69,23 @@ const Experience = () => {
                 
                 <div className="flex-grow">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                    <h3 className="text-xl font-semibold text-[#E2E8F0]">{exp.title}</h3>
-                    <span className="text-[#94A3B8] text-sm bg-[#2D3748] px-3 py-1 rounded-full mt-2 sm:mt-0">
+                    <h3 className="text-xl font-semibold text-[#2B2B2B]">{exp.title}</h3>
+                    <span className="text-[#555555] text-sm bg-white px-3 py-1 rounded-full mt-2 sm:mt-0 border border-gray-200">
                       {exp.date}
                     </span>
                   </div>
                   
                   <div className="mb-4">
                     <span className="text-[#06B6D4] font-medium">{exp.company}</span>
-                    <span className="mx-2 text-[#94A3B8]">•</span>
-                    <span className="text-[#94A3B8]">{exp.location}</span>
+                    <span className="mx-2 text-[#555555]">•</span>
+                    <span className="text-[#555555]">{exp.location}</span>
                   </div>
                   
                   <ul className="space-y-2">
                     {exp.description.map((desc, i) => (
                       <li key={i} className="flex items-start">
                         <span className="text-[#4F46E5] mr-2 mt-1">▹</span>
-                        <span className="text-[#94A3B8]">{desc}</span>
+                        <span className="text-[#555555]">{desc}</span>
                       </li>
                     ))}
                   </ul>

@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center px-4 text-center bg-[#0F172A]"
+      className="relative flex min-h-screen flex-col items-center justify-center px-4 text-center bg-white"
     >
       {/* Animated Name */}
       <motion.div
@@ -24,7 +24,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="text-lg sm:text-xl text-[#94A3B8] font-medium font-spaceGrotesk max-w-md mx-auto"
+        className="text-lg sm:text-xl text-[#555555] font-medium font-spaceGrotesk max-w-md mx-auto"
       >
         Software Developer • Java | Spring Boot | Node.js | AWS
       </motion.p>
@@ -38,10 +38,10 @@ const Hero = () => {
       >
         <a
           href="mailto:work.jaybhesania@gmail.com"
-          className="group flex items-center gap-2 text-[#94A3B8] hover:text-[#E2E8F0] transition-colors"
+          className="group flex items-center gap-2 text-[#555555] hover:text-[#2B2B2B] transition-colors"
           aria-label="Email"
         >
-          <span className="p-2 rounded-full bg-[#1E293B] group-hover:bg-[#4F46E5] transition-colors">
+          <span className="p-2 rounded-full bg-gray-100 group-hover:bg-[#4F46E5] group-hover:text-white transition-colors">
             <Mail size={20} />
           </span>
           <span className="hidden sm:inline">work.jaybhesania@gmail.com</span>
@@ -51,23 +51,23 @@ const Hero = () => {
           href="https://github.com/JayBhesania46"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-2 text-[#94A3B8] hover:text-[#E2E8F0] transition-colors"
+          className="group flex items-center gap-2 text-[#555555] hover:text-[#2B2B2B] transition-colors"
           aria-label="GitHub Profile"
         >
-          <span className="p-2 rounded-full bg-[#1E293B] group-hover:bg-[#4F46E5] transition-colors">
+          <span className="p-2 rounded-full bg-gray-100 group-hover:bg-[#4F46E5] group-hover:text-white transition-colors">
             <Github size={20} />
           </span>
           <span className="hidden sm:inline">GitHub</span>
         </a>
         
         <a
-          href="https://linkedin.com/in/JayBhesania"
+          href="https://www.linkedin.com/in/bhesaniajay/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-2 text-[#94A3B8] hover:text-[#E2E8F0] transition-colors"
+          className="group flex items-center gap-2 text-[#555555] hover:text-[#2B2B2B] transition-colors"
           aria-label="LinkedIn Profile"
         >
-          <span className="p-2 rounded-full bg-[#1E293B] group-hover:bg-[#4F46E5] transition-colors">
+          <span className="p-2 rounded-full bg-gray-100 group-hover:bg-[#4F46E5] group-hover:text-white transition-colors">
             <Linkedin size={20} />
           </span>
           <span className="hidden sm:inline">LinkedIn</span>
@@ -82,7 +82,7 @@ const Hero = () => {
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
         <div className="flex flex-col items-center">
-          <span className="text-[#94A3B8] text-sm mb-2">Scroll</span>
+          <span className="text-[#555555] text-sm mb-2">Scroll</span>
           <div className="w-[2px] h-10 bg-gradient-to-b from-[#4F46E5] to-[#06B6D4]"></div>
         </div>
       </motion.div>

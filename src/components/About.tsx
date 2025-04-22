@@ -7,15 +7,15 @@ const About = () => {
   return (
     <motion.section
       id="about"
-      className="py-24 bg-[#1E293B] reveal"
+      className="py-24 bg-gray-100 reveal"
     >
-      <div className="container mx-auto px-6 lg:px-16 max-w-4xl text-[#E2E8F0]">
+      <div className="container mx-auto px-6 lg:px-16 max-w-4xl text-[#2B2B2B]">
         <h2 className="text-3xl font-spaceGrotesk font-semibold mb-6">
           About Me
         </h2>
-        <p className="text-lg font-inter leading-relaxed mb-8 text-[#94A3B8]">{paragraph}</p>
+        <p className="text-lg font-inter leading-relaxed mb-8 text-[#555555]">{paragraph}</p>
         
-        <hr className="border-[#2D3748] border mt-12" />
+        <hr className="border-gray-300 border mt-12" />
       </div>
     </motion.section>
   );

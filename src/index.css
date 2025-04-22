@@ -8,8 +8,8 @@
 @layer base {
   body {
     font-family: 'Inter', 'sans-serif';
-    background-color: #0F172A;
-    color: #E2E8F0;
+    background-color: #FFFFFF;
+    color: #2B2B2B;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
@@ -61,7 +61,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1E293B;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -4,32 +4,46 @@ import { Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Receipt Processing API",
+    title: "Receipt Processor",
     tech: "Java, Spring Boot, DynamoDB, Docker",
     description:
       "Built RESTful API, handled 100+ req/sec, 95% accuracy in reward validation.",
-    github: "https://github.com/JayBhesania46/receipt-api"
+    github: "https://github.com/JayBhesania46/Receipt-Processor"
   },
   {
     title: "Apartment Scout",
     tech: "Node.js, MongoDB, Real-time Chat",
     description:
       "Searchable student housing app with real-time messaging.",
-    github: "https://github.com/JayBhesania46/apartment-scout"
+    github: "https://github.com/JayBhesania46/Apartment_Scout"
   },
   {
-    title: "Baby Care App",
+    title: "Baby Care Web App",
     tech: "React, Spring Boot, AWS, MySQL",
     description:
       "Dashboard for parents to track baby activities, secure role-based access.",
-    github: "https://github.com/JayBhesania46/baby-care-app"
+    github: "https://github.com/JayBhesania46/Baby_Care_Web_App"
   },
   {
-    title: "Search Engine Tool",
+    title: "Search Engine",
     tech: "HTML, JavaScript, Node.js",
     description:
       "Web crawler that counts keyword frequency and ranks results.",
-    github: "https://github.com/JayBhesania46/search-engine"
+    github: "https://github.com/JayBhesania46/Search_Engine"
+  },
+  {
+    title: "Heart Stroke Analysis",
+    tech: "Python, Machine Learning, Data Analysis",
+    description:
+      "Analysis and prediction model for heart stroke risk factors.",
+    github: "https://github.com/JayBhesania46/Heart_Stroke_Analysis"
+  },
+  {
+    title: "Microservices",
+    tech: "Java, Spring Boot, Docker, Kubernetes",
+    description:
+      "Scalable microservices architecture with service discovery and load balancing.",
+    github: "https://github.com/JayBhesania46/Micro_Services"
   },
 ];
 
@@ -37,10 +51,10 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 bg-[#1E293B]"
+      className="py-24 bg-gray-100"
     >
       <div className="container mx-auto px-6 lg:px-16 max-w-5xl">
-        <h2 className="text-3xl font-spaceGrotesk font-semibold mb-12 text-[#E2E8F0] text-center reveal">
+        <h2 className="text-3xl font-spaceGrotesk font-semibold mb-12 text-[#2B2B2B] text-center reveal">
           Projects
         </h2>
 
@@ -55,7 +69,7 @@ const Projects = () => {
           {projects.map((project, i) => (
             <motion.article
               key={i}
-              className="bg-[#0F172A] rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-[#2D3748] group reveal"
+              className="bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 group reveal"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
@@ -65,9 +79,14 @@ const Projects = () => {
             >
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-semibold font-spaceGrotesk text-[#E2E8F0] group-hover:text-[#4F46E5] transition-colors">
+                  <a 
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-semibold font-spaceGrotesk text-[#2B2B2B] group-hover:text-[#4F46E5] transition-colors"
+                  >
                     {project.title}
-                  </h3>
+                  </a>
                   
                   {project.github && (
                     <a 
@@ -75,7 +94,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`GitHub repository for ${project.title}`}
-                      className="text-[#94A3B8] hover:text-[#4F46E5] transition-colors"
+                      className="text-[#555555] hover:text-[#4F46E5] transition-colors"
                     >
                       <Github size={20} />
                     </a>
@@ -83,7 +102,7 @@ const Projects = () => {
                 </div>
                 
                 <p className="text-[#06B6D4] text-sm mb-3 font-mono">{project.tech}</p>
-                <p className="text-[#94A3B8] font-inter">{project.description}</p>
+                <p className="text-[#555555] font-inter">{project.description}</p>
               </div>
             </motion.article>
           ))}

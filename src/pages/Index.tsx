@@ -35,7 +35,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-[#0F172A] min-h-screen text-[#E2E8F0] scroll-smooth">
+    <div className="bg-white min-h-screen text-[#2B2B2B] scroll-smooth">
       {mounted && (
         <>
           <Navbar />
