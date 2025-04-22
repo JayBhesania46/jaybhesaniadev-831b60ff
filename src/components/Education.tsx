@@ -47,9 +47,7 @@ const Education = () => {
                   <GraduationCap className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-1">{edu.degree}</h3>
-                  <p className="font-medium mb-2">{edu.school}</p>
-                  <p className="italic text-[#595959]">{edu.location}</p>
+                  <h3 className="text-xl font-semibold mb-1">{edu.school}, {edu.location} — {edu.degree}</h3>
                 </div>
               </div>
             </motion.div>

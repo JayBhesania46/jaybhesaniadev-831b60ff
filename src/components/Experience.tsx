@@ -60,22 +60,18 @@ const Experience = () => {
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               className="reveal"
             >
-              <div className="bg-gray-100 p-6 rounded-lg border border-gray-200 shadow-lg">
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-lg">
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold text-[#2B2B2B]">{exp.title}</h3>
-                  <div className="text-[#06B6D4] font-medium flex items-center gap-2">
-                    {exp.company}
-                    <span className="text-[#555555] text-sm">•</span>
-                    <span className="text-[#555555] text-sm">{exp.location}</span>
-                    <span className="text-[#555555] text-sm">•</span>
-                    <span className="text-[#555555] text-sm">{exp.date}</span>
+                  <div className="text-[#06B6D4] font-medium">
+                    {exp.company}, {exp.location} <span className="text-[#555555] text-sm ml-2">{exp.date}</span>
                   </div>
                 </div>
                 
                 <ul className="space-y-2">
                   {exp.description.map((desc, i) => (
                     <li key={i} className="flex items-start">
-                      <span className="text-[#4F46E5] mr-2 mt-1">▹</span>
+                      <span className="text-[#4F46E5] mr-2 mt-1">•</span>
                       <span className="text-[#555555]">{desc}</span>
                     </li>
                   ))}

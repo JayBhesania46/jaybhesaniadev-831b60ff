@@ -69,7 +69,7 @@ const Projects = () => {
           {projects.map((project, i) => (
             <motion.article
               key={i}
-              className="bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 group reveal"
+              className="bg-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 group reveal"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
