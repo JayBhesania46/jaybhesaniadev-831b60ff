@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
@@ -37,7 +36,6 @@ const Hero = () => {
       id="home"
       className="relative flex min-h-screen flex-col items-center justify-center px-4 text-center bg-white text-black"
     >
-      {/* Animated Name with individual letters */}
       <motion.h1
         className="text-5xl sm:text-7xl font-bold font-sans mb-6 select-none flex justify-center flex-wrap"
         variants={containerVariants}
@@ -51,7 +49,6 @@ const Hero = () => {
             key={index}
             className="inline-block"
             variants={letterVariants}
-            // Add continuous wave on letters with some delay for a subtle effect
             animate="visible"
             whileHover="hover"
             style={{ display: char === " " ? "inline-block" : undefined }}
@@ -62,17 +59,16 @@ const Hero = () => {
         ))}
       </motion.h1>
 
-      {/* Updated Professional Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.9 }}
-        className="text-lg sm:text-xl max-w-xl text-gray-700 font-sans leading-relaxed mb-12"
+        className="text-lg sm:text-xl max-w-2xl text-gray-700 font-sans leading-relaxed mb-8"
       >
-        Software Engineer | Backend Developer | Java • Spring Boot • Node.js • AWS
+        Software engineer based in United States with skills in<br />
+        Java | Spring Boot | JavaScript | React | Node.js | AWS | SQL
       </motion.p>
 
-      {/* Social Links */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
