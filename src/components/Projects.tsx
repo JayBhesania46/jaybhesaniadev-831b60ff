@@ -11,13 +11,6 @@ const projects = [
     github: "https://github.com/JayBhesania46/Receipt-Processor"
   },
   {
-    title: "Apartment Scout",
-    tech: "Node.js, MongoDB, Real-time Chat",
-    description:
-      "Searchable student housing app with real-time messaging.",
-    github: "https://github.com/JayBhesania46/Apartment_Scout"
-  },
-  {
     title: "Baby Care Web App",
     tech: "React, Spring Boot, AWS, MySQL",
     description:
@@ -39,7 +32,14 @@ const projects = [
     github: "https://github.com/JayBhesania46/Heart_Stroke_Analysis"
   },
   {
-    title: "Microservices",
+    title: "Apartment Scout",
+    tech: "Node.js, MongoDB, Real-time Chat",
+    description:
+      "Searchable student housing app with real-time messaging.",
+    github: "https://github.com/JayBhesania46/Apartment_Scout"
+  },
+  {
+    title: "Micro Services",
     tech: "Java, Spring Boot, Docker, Kubernetes",
     description:
       "Scalable microservices architecture with service discovery and load balancing.",
@@ -54,12 +54,12 @@ const Projects = () => {
       className="py-24 bg-gray-100"
     >
       <div className="container mx-auto px-6 lg:px-16 max-w-5xl">
-        <h2 className="text-3xl font-spaceGrotesk font-semibold mb-12 text-[#2B2B2B] text-center reveal">
+        <h2 className="text-3xl font-sans font-semibold mb-12 text-[#2B2B2B] text-center reveal">
           Projects
         </h2>
 
         <motion.div
-          className="grid gap-8 sm:grid-cols-2"
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -83,7 +83,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xl font-semibold font-spaceGrotesk text-[#2B2B2B] group-hover:text-[#4F46E5] transition-colors"
+                    className="text-xl font-semibold font-sans text-[#2B2B2B] group-hover:text-black group-hover:underline transition-colors"
                   >
                     {project.title}
                   </a>
@@ -94,15 +94,15 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`GitHub repository for ${project.title}`}
-                      className="text-[#555555] hover:text-[#4F46E5] transition-colors"
+                      className="text-[#555555] hover:text-black transition-colors"
                     >
                       <Github size={20} />
                     </a>
                   )}
                 </div>
                 
-                <p className="text-[#06B6D4] text-sm mb-3 font-mono">{project.tech}</p>
-                <p className="text-[#555555] font-inter">{project.description}</p>
+                <p className="text-gray-700 text-sm mb-3 font-mono">{project.tech}</p>
+                <p className="text-[#555555] font-sans">{project.description}</p>
               </div>
             </motion.article>
           ))}

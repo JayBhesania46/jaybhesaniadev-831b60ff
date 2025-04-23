@@ -29,18 +29,6 @@ const letterVariants: Variants = {
     color: "#444444",
     transition: { duration: 0.3 },
   },
-  wave: {
-    y: [0, -5, 0],
-    transition: {
-      y: {
-        repeat: Infinity,
-        repeatType: "mirror",
-        duration: 2,
-        ease: "easeInOut",
-      },
-      delay: 0,
-    },
-  },
 };
 
 const Hero = () => {
@@ -67,7 +55,6 @@ const Hero = () => {
             animate="visible"
             whileHover="hover"
             style={{ display: char === " " ? "inline-block" : undefined }}
-            // Continuous wave for letters that are not space
             transition={{ delay: 0.2 + index * 0.07 }}
           >
             {char === " " ? "\u00A0" : char}
@@ -75,15 +62,14 @@ const Hero = () => {
         ))}
       </motion.h1>
 
-      {/* Tech Stack Subtitle */}
+      {/* Updated Professional Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.9 }}
         className="text-lg sm:text-xl max-w-xl text-gray-700 font-sans leading-relaxed mb-12"
       >
-        Software engineer based in United States with skills in<br />{" "}
-        Java | Spring Boot | JavaScript | React | Node.js | AWS | SQL
+        Software Engineer | Backend Developer | Java • Spring Boot • Node.js • AWS
       </motion.p>
 
       {/* Social Links */}

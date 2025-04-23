@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,13 +15,6 @@
 }
 
 @layer utilities {
-  .font-inter {
-    font-family: 'Inter', 'sans-serif';
-  }
-  .font-spaceGrotesk {
-    font-family: 'Space Grotesk', 'sans-serif';
-  }
-  
   .hover-lift {
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
@@ -49,7 +42,7 @@
   }
 }
 
-/* Smooth transitions and animations */
+/* Fade animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -60,29 +53,26 @@
   to { transform: translateX(0); opacity: 1; }
 }
 
-.text-gradient {
-  color: #000;
+.link-hover {
   position: relative;
-  display: inline-block;
-  transition: color 0.3s ease;
 }
 
-.text-gradient:after {
+.link-hover:after {
   content: '';
   position: absolute;
   width: 100%;
-  height: 3px;
-  bottom: -3px;
+  height: 1px;
+  bottom: -2px;
   left: 0;
-  background: linear-gradient(90deg, #333, #888);
+  background-color: currentColor;
   transform: scaleX(0);
-  transform-origin: bottom right;
+  transform-origin: right;
   transition: transform 0.3s ease;
 }
 
-.text-gradient:hover:after {
+.link-hover:hover:after {
   transform: scaleX(1);
-  transform-origin: bottom left;
+  transform-origin: left;
 }
 
 /* Smooth scroll behavior */
@@ -125,24 +115,8 @@ section {
   transition: background-color 0.5s ease;
 }
 
-.link-hover {
-  position: relative;
-}
-
-.link-hover:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: -2px;
-  left: 0;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-.link-hover:hover:after {
-  transform: scaleX(1);
-  transform-origin: left;
+/* Fade-in text animation */
+.fade-in-text {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
 }

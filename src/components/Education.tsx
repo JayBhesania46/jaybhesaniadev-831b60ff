@@ -28,7 +28,7 @@ const Education = () => {
       className="py-20 bg-[#f5f5f5]"
     >
       <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-[#2B2B2B]">
-        <h2 className="text-3xl font-spaceGrotesk font-semibold mb-16 text-[#2B2B2B] text-center">
+        <h2 className="text-3xl font-sans font-semibold mb-16 text-[#2B2B2B] text-center">
           Education
         </h2>
         
@@ -47,7 +47,7 @@ const Education = () => {
                   <GraduationCap className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-1">{edu.school}, {edu.location} — {edu.degree}</h3>
+                  <h3 className="text-xl font-semibold mb-1">{edu.school} — {edu.degree}</h3>
                 </div>
               </div>
             </motion.div>

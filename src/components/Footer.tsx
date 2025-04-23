@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-8 text-center text-[#2B2B2B] font-inter text-sm border-t border-gray-200">
+    <footer className="bg-white py-8 text-center text-[#2B2B2B] font-sans text-sm border-t border-gray-200">
       <div className="container mx-auto px-6 lg:px-16 flex flex-col items-center">
         <p className="mb-4 transition-opacity duration-300 hover:opacity-70">© Jay Bhesania, 2025</p>
         
@@ -10,7 +10,7 @@ const Footer = () => {
             href="https://github.com/JayBhesania46" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-[#555555] hover:text-black transition-colors duration-300"
+            className="text-[#555555] hover:text-black hover:underline transition-colors duration-300"
             aria-label="GitHub"
           >
             GitHub
@@ -19,14 +19,14 @@ const Footer = () => {
             href="https://www.linkedin.com/in/bhesaniajay/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-[#555555] hover:text-black transition-colors duration-300"
+            className="text-[#555555] hover:text-black hover:underline transition-colors duration-300"
             aria-label="LinkedIn"
           >
             LinkedIn
           </a>
           <a 
             href="mailto:work.jaybhesania@gmail.com" 
-            className="text-[#555555] hover:text-black transition-colors duration-300"
+            className="text-[#555555] hover:text-black hover:underline transition-colors duration-300"
             aria-label="Email"
           >
             Email

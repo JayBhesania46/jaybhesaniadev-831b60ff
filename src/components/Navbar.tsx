@@ -9,7 +9,6 @@ const navItems = [
   { id: "education", label: "Education" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "contact", label: "Contact" },
 ];
 
 const Navbar = () => {
@@ -56,7 +55,7 @@ const Navbar = () => {
     }`}>
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
         <div
-          className="text-[#2B2B2B] font-spaceGrotesk font-bold text-lg cursor-pointer transition-all duration-300 hover:opacity-80"
+          className="text-[#2B2B2B] font-sans font-bold text-lg cursor-pointer transition-all duration-300 hover:opacity-80"
           onClick={() => handleNavClick("home")}
         >
           Jay Bhesania

@@ -53,31 +53,6 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
-				navy: {
-					DEFAULT: '#0A192F',
-					light: '#112240',
-					dark: '#020c1b',
-				},
-				slate: {
-					DEFAULT: '#8892B0',
-					light: '#a8b2d1',
-					lighter: '#ccd6f6',
-					lightest: '#e6f1ff',
-				},
-				green: {
-					DEFAULT: '#64ffda',
-					tint: 'rgba(100, 255, 218, 0.1)',
-				}
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
