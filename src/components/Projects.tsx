@@ -51,10 +51,10 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 bg-gray-100"
+      className="py-24 bg-white"
     >
       <div className="container mx-auto px-6 lg:px-16 max-w-5xl">
-        <h2 className="text-3xl font-sans font-semibold mb-12 text-[#2B2B2B] text-center reveal">
+        <h2 className="text-3xl font-sans font-semibold mb-12 text-[#2B2B2B] text-center section-title">
           Projects
         </h2>
 
@@ -69,7 +69,7 @@ const Projects = () => {
           {projects.map((project, i) => (
             <motion.article
               key={i}
-              className="bg-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-200 group reveal"
+              className="section-card transform transition-all duration-300 hover:scale-[1.02] group"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },

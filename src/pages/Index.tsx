@@ -10,7 +10,6 @@ import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 
 const Index = () => {
-  // Show content after mount (for smooth animations / avoid SSR issues)
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
@@ -20,12 +19,17 @@ const Index = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('active');
+          entry.target.classList.add('visible');
         }
       });
     }, { threshold: 0.1 });
     
-    // Observe all elements with the .reveal class
+    // Observe all section titles
+    document.querySelectorAll('.section-title').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Observe reveal elements
     document.querySelectorAll('.reveal').forEach(el => {
       observer.observe(el);
     });

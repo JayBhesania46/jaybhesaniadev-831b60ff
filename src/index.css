@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 @tailwind base;
@@ -119,4 +118,29 @@ section {
 .fade-in-text {
   opacity: 0;
   animation: fadeIn 2s ease-in forwards;
+}
+
+/* Card styles - shared across sections */
+.section-card {
+  background-color: #f4f4f4;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.section-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section title animation */
+.section-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

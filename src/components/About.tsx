@@ -1,6 +1,4 @@
-
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
 
 const About = () => {
   return (
@@ -11,9 +9,9 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-[#2B2B2B]"
+          className="section-card text-[#2B2B2B]"
         >
-          <h2 className="text-3xl font-sans font-semibold mb-10 text-center">
+          <h2 className="text-3xl font-sans font-semibold mb-10 text-center section-title">
             About Me
           </h2>
           

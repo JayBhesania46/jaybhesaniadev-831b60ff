@@ -37,7 +37,7 @@ const Education = () => {
       className="py-20 bg-white"
     >
       <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-black">
-        <h2 className="text-3xl font-sans font-semibold mb-16 text-center">
+        <h2 className="text-3xl font-sans font-semibold mb-16 text-center section-title">
           Education
         </h2>
         
@@ -49,7 +49,7 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-[#f4f4f4] rounded-lg p-6 shadow-sm text-black hover:shadow-md transition-shadow duration-300"
+              className="section-card"
             >
               <div>
                 <h3 className="text-xl font-semibold mb-2">{edu.school}</h3>
