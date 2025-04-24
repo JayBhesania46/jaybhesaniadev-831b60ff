@@ -1,5 +1,4 @@
 
-import { Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const experiences = [
@@ -8,6 +7,7 @@ const experiences = [
     title: 'Graduate Teaching Assistant',
     company: 'Stevens Institute of Technology',
     location: 'Hoboken, NJ, USA',
+    duration: 'Sep 2023 – May 2024',
     description: [
       'Assisted professors in teaching computer science courses, providing technical support and guidance to students.',
       'Conducted lab sessions, graded assignments, and held office hours to help students understand complex programming concepts.',
@@ -18,6 +18,7 @@ const experiences = [
     title: 'Software Developer',
     company: 'MatCut Enterprise',
     location: 'India',
+    duration: 'Aug 2020 – Aug 2022',
     description: [
       'Improved backend efficiency by 10% using Node.js',
       'Implemented microservices to enhance scalability',
@@ -29,6 +30,7 @@ const experiences = [
     title: 'Junior Software Developer',
     company: 'Zeronsec',
     location: 'India',
+    duration: 'Feb 2020 – July 2020',
     description: [
       'Contributed to 30% faster load times by refining Java-based web application features',
       'Participated in code reviews and implemented feedback to improve code quality.',
@@ -44,24 +46,34 @@ const Experience = () => {
       className="py-24 bg-white"
     >
       <div className="container mx-auto px-6 lg:px-16 max-w-5xl text-[#2B2B2B]">
-        <h2 className="text-3xl font-sans font-semibold mb-16 text-center reveal">
+        <h2 className="text-3xl font-sans font-semibold mb-16 text-center section-title">
           Experience
         </h2>
-        <div className="space-y-12">
+        
+        <div className="relative space-y-8">
+          {/* Timeline line */}
+          <div className="absolute left-0 top-0 h-full w-0.5 bg-gray-200" />
+          
           {experiences.map((exp, idx) => (
             <motion.div
               key={exp.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="reveal"
+              className="reveal relative pl-8"
             >
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-lg">
+              {/* Timeline dot */}
+              <div className="absolute left-[-8px] top-2 h-4 w-4 rounded-full bg-gray-200 border-4 border-white" />
+              
+              <div className="section-card">
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold text-[#2B2B2B]">{exp.title}</h3>
                   <div className="text-gray-700 font-medium">
                     {exp.company}, {exp.location}
+                  </div>
+                  <div className="text-gray-500 text-sm mt-1">
+                    {exp.duration}
                   </div>
                 </div>
                 
