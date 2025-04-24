@@ -74,39 +74,6 @@
   transform-origin: left;
 }
 
-/* Section header styles */
-.section-title {
-  position: sticky;
-  top: 80px; /* Account for navbar height */
-  background-color: #fff;
-  padding: 1rem 0;
-  margin: 0;
-  z-index: 40;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-out;
-}
-
-.section-title.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Card styles - shared across sections */
-.section-card {
-  background-color: #f4f4f4;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 1.5rem;
-}
-
-.section-card:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
@@ -151,4 +118,29 @@ section {
 .fade-in-text {
   opacity: 0;
   animation: fadeIn 2s ease-in forwards;
+}
+
+/* Card styles - shared across sections */
+.section-card {
+  background-color: #f4f4f4;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.section-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section title animation */
+.section-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
