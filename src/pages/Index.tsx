@@ -11,18 +11,28 @@ import Footer from "../components/Footer";
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   
   useEffect(() => {
     setMounted(true);
     
-    // Intersection Observer for scroll animations
+    // Intersection Observer for section titles and reveal animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          
+          // Update active section
+          const sectionId = entry.target.closest('section')?.id;
+          if (sectionId) {
+            setActiveSection(sectionId);
+          }
         }
       });
-    }, { threshold: 0.1 });
+    }, { 
+      threshold: 0.1,
+      rootMargin: '-100px 0px -100px 0px'
+    });
     
     // Observe all section titles
     document.querySelectorAll('.section-title').forEach(el => {
@@ -41,7 +51,7 @@ const Index = () => {
     <div className="bg-white min-h-screen text-[#2B2B2B] scroll-smooth">
       {mounted && (
         <>
-          <Navbar />
+          <Navbar activeSection={activeSection} />
           <main className="pt-16">
             <Hero />
             <About />

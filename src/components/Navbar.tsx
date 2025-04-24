@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -11,8 +10,7 @@ const navItems = [
   { id: "projects", label: "Projects" },
 ];
 
-const Navbar = () => {
-  const [active, setActive] = useState("home");
+const Navbar = ({ activeSection }: { activeSection: string }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -20,28 +18,13 @@ const Navbar = () => {
     const handleScroll = () => {
       const scrollY = window.pageYOffset;
       setScrolled(scrollY > 20);
-      
-      let current = "home";
-      navItems.forEach(({ id }) => {
-        const section = document.getElementById(id);
-        if (section) {
-          const sectionTop = section.offsetTop - 150; // offset for navbar height
-          if (scrollY >= sectionTop) {
-            current = id;
-          }
-        }
-      });
-
-      setActive(current);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleNavClick = (id: string) => {
-    setActive(id);
     setMenuOpen(false);
     const el = document.getElementById(id);
     if (el) {
@@ -61,10 +44,9 @@ const Navbar = () => {
           Jay Bhesania
         </div>
 
-        {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-8 text-[#555555] text-sm font-medium select-none items-center">
           {navItems.map(({ id, label }) => {
-            const isActive = active === id;
+            const isActive = activeSection === id;
             return (
               <li key={id}>
                 <button
@@ -84,7 +66,6 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* Mobile menu button */}
         <button
           className="md:hidden text-[#2B2B2B] focus:outline-none focus:ring-2 focus:ring-black rounded transition-transform duration-300 hover:scale-110"
           onClick={() => setMenuOpen((o) => !o)}
@@ -94,11 +75,10 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <ul className="md:hidden bg-white/95 backdrop-blur-md text-[#555555] flex flex-col space-y-4 p-6 border-t border-gray-200 select-none">
           {navItems.map(({ id, label }) => {
-            const isActive = active === id;
+            const isActive = activeSection === id;
             return (
               <li key={id}>
                 <button
